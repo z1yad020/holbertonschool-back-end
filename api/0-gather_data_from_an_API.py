@@ -5,8 +5,8 @@ task 0 - fetching fake api
 """
 
 
-import sys
 import requests
+import sys
 
 
 def todos(id):
