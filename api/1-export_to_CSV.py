@@ -16,13 +16,13 @@ def to_csv(id):
     user_todo = requests.get(
             f"https://jsonplaceholder.typicode.com/users/{id}/todos").json()
 
-    EMPLOYEE_NAME = user.get("name")
+    EMPLOYEE_USERNAME = user.get("username")
 
     with open(f'{id}.csv', mode='w') as f:
-        emp = csv.writer(f)
+        emp = csv.writer(f, quoting=csv.QUOTE_ALL)
 
         for usr in user_todo:
-            emp.writerow([id, EMPLOYEE_NAME,
+            emp.writerow([id, EMPLOYEE_USERNAME,
                          usr.get("completed"),
                          usr.get("title")])
 
