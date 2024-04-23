@@ -19,7 +19,7 @@ def to_csv(id):
     EMPLOYEE_NAME = user.get("name")
 
     with open(f'{id}.csv', mode='w') as f:
-        emp = csv.writer(f, quoting=csv.QUOTE_ALL)
+        emp = csv.writer(f)
 
         for usr in user_todo:
             emp.writerow([id, EMPLOYEE_NAME,
